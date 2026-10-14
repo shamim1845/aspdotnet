@@ -1,0 +1,52 @@
+@host = http://localhost:5025
+
+### Health & API Info
+GET {{host}}/
+Accept: application/json
+
+### Get All Products (supports query params: ?category=electronics&minPrice=50&maxPrice=500)
+GET {{host}}/api/products
+Accept: application/json
+
+### Create a Product
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Wireless Noise Cancelling Headphones",
+  "description": "Premium over-ear headphones with 30-hour battery life.",
+  "price": 199.99,
+  "category": "Electronics",
+  "stock": 45,
+  "imageUrl": "https://example.com/headphones.jpg"
+}
+
+### Get Product By Id (replace with actual id)
+GET {{host}}/api/products/6acf4410646e47b76e3c0feb
+Accept: application/json
+
+### Update a Product
+PATCH {{host}}/api/products/6acf4410646e47b76e3c0feb
+Content-Type: application/json
+
+{
+  "price": 179.99,
+  "stock": 400
+}
+
+### Delete a Product
+DELETE {{host}}/api/products/670bb1a90c427384975f7890
+
+### Get All Users
+GET {{host}}/api/users
+Accept: application/json
+
+### Create a User
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "role": "Customer"
+}
