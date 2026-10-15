@@ -1,5 +1,9 @@
 namespace aspdotnet.Models.Entities;
 
+/// <summary>
+/// User entity stored in the MongoDB "users" collection.
+/// Inherits `Id`, `CreatedAt`, and `UpdatedAt` from BaseEntity.
+/// </summary>
 public class User : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
